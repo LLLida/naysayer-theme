@@ -1,166 +1,57 @@
-;;; naysayer-theme.el --- The naysayer color theme
+;; Created by Adil Mokhammad
+;; This supports tab-bar mode and improves some colors a bit
+(deftheme Naysayer+
+  "Theme inspired by Jonathan Blow's compiler livestreams")
 
-;; Author: Nick Aversano <nickav@users.noreply.github.com>
-;; Version: 0.33
-;; Filename: naysayer-theme.el
-;; Package-Requires: ((emacs "24"))
-;; URL: https://github.com/nickav/naysayer-theme.el
-;; License: GPL-3+
+(custom-theme-set-faces
+ 'Naysayer+
+ '(default ((t (:inherit nil :extend nil :stipple nil :background "#062329" :foreground "#d1b897" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 113 :width normal :foundry "PfEd" :family "DejaVu Sans Mono"))))
+ '(cursor ((t (:background "#ffffff"))))
+ '(fixed-pitch ((t (:family "Monospace"))))
+ '(variable-pitch ((((type w32)) (:foundry "outline" :family "Arial")) (t (:family "Sans Serif"))))
+ '(escape-glyph ((((background dark)) (:foreground "cyan")) (((type pc)) (:foreground "magenta")) (t (:foreground "brown"))))
+ '(homoglyph ((((background dark)) (:foreground "cyan")) (((type pc)) (:foreground "magenta")) (t (:foreground "brown"))))
+ '(minibuffer-prompt ((((background dark)) (:foreground "cyan")) (((type pc)) (:foreground "magenta")) (t (:foreground "medium blue"))))
+ '(highlight ((t (:background "#0000ff"))))
+ '(region ((t (:extend t :background "#0000ff"))))
+ '(shadow ((((class color grayscale) (min-colors 88) (background light)) (:foreground "grey50")) (((class color grayscale) (min-colors 88) (background dark)) (:foreground "grey70")) (((class color) (min-colors 8) (background light)) (:foreground "green")) (((class color) (min-colors 8) (background dark)) (:foreground "yellow"))))
+ '(secondary-selection ((((class color) (min-colors 88) (background light)) (:extend t :background "yellow1")) (((class color) (min-colors 88) (background dark)) (:extend t :background "SkyBlue4")) (((class color) (min-colors 16) (background light)) (:extend t :background "yellow")) (((class color) (min-colors 16) (background dark)) (:extend t :background "SkyBlue4")) (((class color) (min-colors 8)) (:extend t :foreground "black" :background "cyan")) (t (:inverse-video t))))
+ '(trailing-whitespace ((t (:background "#ffaa00"))))
+ '(font-lock-builtin-face ((t (:foreground "#ffffff"))))
+ '(font-lock-comment-delimiter-face ((t (:foreground "#44b340"))))
+ '(font-lock-comment-face ((t (:foreground "#44b340"))))
+ '(font-lock-constant-face ((t (:foreground "#7ad0c6"))))
+ '(font-lock-doc-face ((t (:foreground "#44b340"))))
+ '(font-lock-doc-markup-face ((t (:inherit (font-lock-constant-face)))))
+ '(font-lock-function-name-face ((t (:foreground "cadet blue"))))
+ '(font-lock-keyword-face ((t (:foreground "#ffffff"))))
+ '(font-lock-negation-char-face ((t (:foreground "#f1b897"))))
+ '(font-lock-preprocessor-face ((t (:foreground "#8cde94"))))
+ '(font-lock-regexp-grouping-backslash ((t (:inherit (bold)))))
+ '(font-lock-regexp-grouping-construct ((t (:inherit (bold)))))
+ '(font-lock-string-face ((t (:foreground "#2ec09c"))))
+ '(font-lock-type-face ((t (:foreground "#8cde94"))))
+ '(font-lock-variable-name-face ((t (:foreground "#c1d1e3"))))
+ '(font-lock-warning-face ((t (:foreground "#ffaa00"))))
+ '(button ((t (:inherit (link)))))
+ '(link ((t (:underline (:color foreground-color :style line) :foreground "cyan1"))))
+ '(link-visited ((t (:foreground "violet" :inherit (link)))))
+ '(fringe ((t (:foreground "#ffffff" :background "#062329"))))
+ '(header-line ((t (:box nil :foreground "grey90" :background "grey20" :inherit (mode-line)))))
+ '(tooltip ((t (:foreground "black" :background "lightyellow" :inherit (variable-pitch)))))
+ '(mode-line ((t (:box nil :foreground "#062329" :background "#d1b897"))))
+ '(mode-line-buffer-id ((t (:weight bold :foreground "#062329"))))
+ '(mode-line-emphasis ((t (:weight bold))))
+ '(mode-line-highlight ((t (:box (:line-width (2 . 2) :color "grey40" :style released-button)))))
+ '(mode-line-inactive ((t (:box nil :foreground "#d1b897" :background "#062329"))))
+ '(isearch ((((class color) (min-colors 88) (background light)) (:foreground "lightskyblue1" :background "magenta3")) (((class color) (min-colors 88) (background dark)) (:foreground "brown4" :background "palevioletred2")) (((class color) (min-colors 16)) (:foreground "cyan1" :background "magenta4")) (((class color) (min-colors 8)) (:foreground "cyan1" :background "magenta4")) (t (:inverse-video t))))
+ '(isearch-fail ((((class color) (min-colors 88) (background light)) (:background "RosyBrown1")) (((class color) (min-colors 88) (background dark)) (:background "red4")) (((class color) (min-colors 16)) (:background "red")) (((class color) (min-colors 8)) (:background "red")) (((class color grayscale)) (:foreground "grey")) (t (:inverse-video t))))
+ '(lazy-highlight ((((class color) (min-colors 88) (background light)) (:background "paleturquoise")) (((class color) (min-colors 88) (background dark)) (:background "paleturquoise4")) (((class color) (min-colors 16)) (:background "turquoise3")) (((class color) (min-colors 8)) (:background "turquoise3")) (t (:underline (:color foreground-color :style line)))))
+ '(match ((((class color) (min-colors 88) (background light)) (:background "khaki1")) (((class color) (min-colors 88) (background dark)) (:background "RoyalBlue3")) (((class color) (min-colors 8) (background light)) (:foreground "black" :background "yellow")) (((class color) (min-colors 8) (background dark)) (:foreground "white" :background "blue")) (((type tty) (class mono)) (:inverse-video t)) (t (:background "gray"))))
+ '(next-error ((t (:inherit (region)))))
+ '(query-replace ((t (:inherit (isearch)))))
+ '(tab-bar ((t (:inherit mode-line-inactive))))
+ '(tab-bar-tab ((t (:inherit mode-line :box (1 . 1)))))
+ '(tab-bar-tab-inactive ((t (:inherit tab-bar)))))
 
-;;; Commentary:
-
-;; Dark green blue color scheme with tan colors. Inspired by Jonathan Blow's compiler livestreams.
-
-;;; Code:
-
-(unless (>= emacs-major-version 24)
-  (error "The naysayer theme requires Emacs 24 or later!"))
-
-(deftheme naysayer "The naysayer color theme")
-
-;; Monokai colors
-(defcustom naysayer-theme-yellow "#E6DB74" "Primary colors - yellow" :type 'string :group 'monokai)
-(defcustom naysayer-theme-orange "#FD971F" "Primary colors - orange" :type 'string :group 'monokai)
-(defcustom naysayer-theme-red "#F92672" "Primary colors - red" :type 'string :group 'monokai)
-(defcustom naysayer-theme-magenta "#FD5FF0" "Primary colors - magenta" :type 'string :group 'monokai)
-(defcustom naysayer-theme-blue "#66D9EF" "Primary colors - blue" :type 'string :group 'monokai)
-(defcustom naysayer-theme-green "#A6E22E" "Primary colors - green" :type 'string :group 'monokai)
-(defcustom naysayer-theme-cyan "#A1EFE4" "Primary colors - cyan" :type 'string :group 'monokai)
-(defcustom naysayer-theme-violet "#AE81FF" "Primary colors - violet" :type 'string :group 'monokai)
-
-(let ((background "#062329")
-      (gutters    "#062329")
-      (gutter-fg  "#062329")
-      (gutters-active "#062329")
-      (builtin      "#ffffff")
-      (selection  "#0000ff")
-      (text       "#d1b897")
-      (comments   "#44b340")
-      (punctuation "#8cde94")
-      (keywords "#ffffff")
-      (variables "#c1d1e3")
-      (functions "#ffffff")
-      (methods    "#c1d1e3")
-      (strings    "#2ec09c")
-      (constants "#7ad0c6")
-      (macros "#8cde94")
-      (numbers "#7ad0c6")
-      (white     "#ffffff")
-      (error "#ff0000")
-      (warning "#ffaa00")
-      (highlight-line "#0b3335")
-      (line-fg "#126367"))
-
-  (custom-theme-set-faces
-   'naysayer
-
-   ;; Default colors
-   ;; *****************************************************************************
-
-   `(default                          ((t (:foreground ,text :background ,background, :weight normal))))
-   `(region                           ((t (:foreground nil :background ,selection))))
-   `(cursor                           ((t (:background ,white                        ))))
-   `(fringe                           ((t (:background ,background   :foreground ,white))))
-   `(linum                            ((t (:background ,background :foreground ,gutter-fg))))
-   `(highlight ((t (:foreground nil :background ,selection))))
-
-   ;; Font lock faces
-   ;; *****************************************************************************
-
-   `(font-lock-keyword-face           ((t (:foreground ,keywords))))
-   `(font-lock-type-face              ((t (:foreground ,punctuation))))
-   `(font-lock-constant-face          ((t (:foreground ,constants))))
-   `(font-lock-variable-name-face     ((t (:foreground ,variables))))
-   `(font-lock-builtin-face           ((t (:foreground ,builtin))))
-   `(font-lock-string-face            ((t (:foreground ,strings))))
-   `(font-lock-comment-face           ((t (:foreground ,comments))))
-   `(font-lock-comment-delimiter-face ((t (:foreground ,comments))))
-   `(font-lock-doc-face               ((t (:foreground ,comments))))
-   `(font-lock-function-name-face     ((t (:foreground ,functions))))
-   `(font-lock-doc-string-face        ((t (:foreground ,strings))))
-   `(font-lock-preprocessor-face      ((t (:foreground ,macros))))
-   `(font-lock-warning-face           ((t (:foreground ,warning))))
-
-   ;; Plugins
-   ;; *****************************************************************************
-   `(trailing-whitespace ((t (:foreground nil :background ,warning))))
-   `(whitespace-trailing ((t (:background nil :foreground ,warning :inverse-video t))))
-
-   `(linum ((t (:foreground ,line-fg :background ,background))))
-   `(linum-relative-current-face ((t (:foreground ,white :background ,background))))
-   `(line-number ((t (:foreground ,line-fg :background ,background))))
-   `(line-number-current-line ((t (:foreground ,white :background ,background))))
-
-   ;; hl-line-mode
-   `(hl-line ((t (:background ,highlight-line))))
-   `(hl-line-face ((t (:background ,highlight-line))))
-
-   ;; rainbow-delimiters
-   `(rainbow-delimiters-depth-1-face ((t (:foreground ,naysayer-theme-violet))))
-   `(rainbow-delimiters-depth-2-face ((t (:foreground ,naysayer-theme-blue))))
-   `(rainbow-delimiters-depth-3-face ((t (:foreground ,naysayer-theme-green))))
-   `(rainbow-delimiters-depth-4-face ((t (:foreground ,naysayer-theme-yellow))))
-   `(rainbow-delimiters-depth-5-face ((t (:foreground ,naysayer-theme-orange))))
-   `(rainbow-delimiters-depth-6-face ((t (:foreground ,naysayer-theme-red))))
-   `(rainbow-delimiters-depth-7-face ((t (:foreground ,naysayer-theme-violet))))
-   `(rainbow-delimiters-depth-8-face ((t (:foreground ,naysayer-theme-blue))))
-   `(rainbow-delimiters-depth-9-face ((t (:foreground ,naysayer-theme-green))))
-   `(rainbow-delimiters-depth-10-face ((t (:foreground ,naysayer-theme-yellow))))
-   `(rainbow-delimiters-depth-11-face ((t (:foreground ,naysayer-theme-orange))))
-   `(rainbow-delimiters-depth-12-face ((t (:foreground ,naysayer-theme-red))))
-
-   ;; mode-line and powerline
-   `(mode-line-buffer-id ((t (:foreground ,background :distant-foreground ,text :text ,text :weight bold))))
-   `(mode-line ((t (:inverse-video unspecified
-                                   :underline unspecified
-                                   :foreground ,background
-                                   :background ,text
-                                   :box nil))))
-   `(powerline-active1 ((t (:background ,text :foreground ,background))))
-   `(powerline-active2 ((t (:background ,text :foreground ,background))))
-
-   `(mode-line-inactive ((t (:inverse-video unspecified
-                                            :underline unspecified
-                                            :foreground ,text
-                                            :background ,background
-                                            :box nil))))
-   `(powerline-inactive1 ((t (:background ,background :foreground ,text))))
-   `(powerline-inactive2 ((t (:background ,background :foreground ,text))))
-
-   ;; js2-mode
-   `(js2-function-call ((t (:inherit (font-lock-function-name-face)))))
-   `(js2-function-param ((t (:foreground ,text))))
-   `(js2-jsdoc-tag ((t (:foreground ,keywords))))
-   `(js2-jsdoc-type ((t (:foreground ,constants))))
-   `(js2-jsdoc-value((t (:foreground ,text))))
-   `(js2-object-property ((t (:foreground ,text))))
-   `(js2-external-variable ((t (:foreground ,constants))))
-   `(js2-error ((t (:foreground ,error))))
-   `(js2-warning ((t (:foreground ,warning))))
-
-   ;; highlight numbers
-   `(highlight-numbers-number ((t (:foreground ,numbers))))
-  )
-
-  (custom-theme-set-variables
-    'naysayer
-    '(linum-format " %5i ")
-  )
-)
-
-;;;###autoload
-(when (and (boundp 'custom-theme-load-path) load-file-name)
-  (add-to-list 'custom-theme-load-path
-               (file-name-as-directory (file-name-directory load-file-name))))
-
-;; *****************************************************************************
-
-(provide-theme 'naysayer)
-
-;; Local Variables:
-;; no-byte-compile: t
-;; End:
-
-(provide 'naysayer-theme)
-
-;;; naysayer-theme.el ends here
+(provide-theme 'Naysayer+)

@@ -1,10 +1,8 @@
-;; Created by Adil Mokhammad
-;; This supports tab-bar mode and improves some colors a bit
-(deftheme Naysayer+
-  "Theme inspired by Jonathan Blow's compiler livestreams")
+(deftheme naysayer
+  "Created 2022-07-28.")
 
 (custom-theme-set-faces
- 'Naysayer+
+ 'naysayer
  '(default ((t (:inherit nil :extend nil :stipple nil :background "#062329" :foreground "#d1b897" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 113 :width normal :foundry "PfEd" :family "DejaVu Sans Mono"))))
  '(cursor ((t (:background "#ffffff"))))
  '(fixed-pitch ((t (:family "Monospace"))))
@@ -54,4 +52,4 @@
  '(tab-bar-tab ((t (:inherit mode-line :box (1 . 1)))))
  '(tab-bar-tab-inactive ((t (:inherit tab-bar)))))
 
-(provide-theme 'Naysayer+)
+(provide-theme 'naysayer)

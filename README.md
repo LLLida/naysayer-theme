@@ -8,23 +8,7 @@
 
 ![Naysayer Theme](/assets/naysayer_0.png)
 
-Includes support for `rainbow-delimeters-mode`.
-
 ## Install
-
-### With package.el
-
-Naysayer is available on [MELPA](http://melpa.milkbox.net).
-
-You can install `naysayer-theme` with: `M-x package-install naysayer-theme`
-
-Then add this to your init file:
-
-```lisp
-(load-theme 'naysayer t)
-```
-
-### Manual
 
 Download `naysayer-theme.el` to the directory `~/.emacs.d/themes/`, then add this to your `.emacs`:
 

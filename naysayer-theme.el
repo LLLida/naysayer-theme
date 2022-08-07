@@ -1,9 +1,11 @@
+;; Created by Adil Mokhammad
+;; This supports tab-bar mode and improves some colors a bit
 (deftheme naysayer
-  "Created 2022-07-28.")
+  "Created 2022-08-07.")
 
 (custom-theme-set-faces
  'naysayer
- '(default ((t (:inherit nil :extend nil :stipple nil :background "#062329" :foreground "#d1b897" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 113 :width normal :foundry "PfEd" :family "DejaVu Sans Mono"))))
+ '(default ((t (:family "DejaVu Sans Mono" :foundry "PfEd" :width normal :height 113 :weight normal :slant normal :underline nil :overline nil :extend nil :strike-through nil :box nil :inverse-video nil :foreground "#d1b897" :background "#062329" :stipple nil :inherit nil))))
  '(cursor ((t (:background "#ffffff"))))
  '(fixed-pitch ((t (:family "Monospace"))))
  '(variable-pitch ((((type w32)) (:foundry "outline" :family "Arial")) (t (:family "Sans Serif"))))
@@ -37,8 +39,8 @@
  '(fringe ((t (:foreground "#ffffff" :background "#062329"))))
  '(header-line ((t (:box nil :foreground "grey90" :background "grey20" :inherit (mode-line)))))
  '(tooltip ((t (:foreground "black" :background "lightyellow" :inherit (variable-pitch)))))
- '(mode-line ((t (:box nil :foreground "#062329" :background "#d1b897"))))
- '(mode-line-buffer-id ((t (:weight bold :foreground "#062329"))))
+ '(mode-line ((t (:background "#d1b897" :foreground "#062329" :box nil))))
+ '(mode-line-buffer-id ((t (:background "#d1b897" :foreground "#062329" :weight bold))))
  '(mode-line-emphasis ((t (:weight bold))))
  '(mode-line-highlight ((t (:box (:line-width (2 . 2) :color "grey40" :style released-button)))))
  '(mode-line-inactive ((t (:box nil :foreground "#d1b897" :background "#062329"))))
@@ -48,8 +50,8 @@
  '(match ((((class color) (min-colors 88) (background light)) (:background "khaki1")) (((class color) (min-colors 88) (background dark)) (:background "RoyalBlue3")) (((class color) (min-colors 8) (background light)) (:foreground "black" :background "yellow")) (((class color) (min-colors 8) (background dark)) (:foreground "white" :background "blue")) (((type tty) (class mono)) (:inverse-video t)) (t (:background "gray"))))
  '(next-error ((t (:inherit (region)))))
  '(query-replace ((t (:inherit (isearch)))))
- '(tab-bar ((t (:inherit mode-line-inactive))))
- '(tab-bar-tab ((t (:inherit mode-line :box (1 . 1)))))
- '(tab-bar-tab-inactive ((t (:inherit tab-bar)))))
+ '(tab-bar ((t (:inherit (mode-line-inactive)))))
+ '(tab-bar-tab ((t (:box (:line-width (1 . 1) :color nil :style nil) :inherit (mode-line)))))
+ '(tab-bar-tab-inactive ((t (:inherit (tab-bar))))))
 
 (provide-theme 'naysayer)
